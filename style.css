@@ -179,12 +179,51 @@ body {
 }
 
 /* Anders 2025-06-09 */
+.wrapper {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
 header {
   margin: 0 auto;
+  padding: 0.5rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid black;
+  text-transform: uppercase;
+  background-color: var(--clr-neutral-100);
+}
+
+header .wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap:1rem;
+  line-height: 1;
+}
+
+svg {
+  width: 42px;
+  height: 42px;
+}
+ 
+svg path {
+  stroke: var(--clr-accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 5rem;
+}
+
+ul {
+  list-style-type: none;
 }
 
 h1 {
@@ -194,4 +233,46 @@ h1 {
 
 .margin-btm {
   margin-bottom: 2rem;
+}
+
+.cards {
+    display: grid;
+    gap: 1em;
+
+    /* fill empty space in the grid */
+    grid-auto-flow: dense;
+
+    /* using grid areas for a static layout */
+    /* grid-template-areas:
+        "a b c"
+        "d e f"
+        "g h i"
+        "j k l"; */
+
+    /* for more dynamic layouts use grid-template-columns  */
+    /* mobile first one column */
+    grid-template-columns: 1fr;
+
+    /* using media queries to change the layout for more columns 70ch = 70 characters */
+    @media (width > 70ch) {
+        /* responsive grid using minmax and auto-fit */
+        grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+    }
+}
+
+.card {
+  display: grid;
+  gap: 1em;
+
+  /* auto = needed space, 1fr = fill remaining space */
+  grid-template-rows: auto auto 1fr auto;
+
+  /* named areas for layout if we want */
+    grid-template-areas:
+        "header"
+        "description"
+        "footer";
+
+  border: 1px solid #ccc;
+  background-color: #eef;
 }
