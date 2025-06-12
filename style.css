@@ -236,24 +236,19 @@ body {
   color: var(--clr-primary-dark);
 }
 
-/* Anders 2025-06-09 */
+/* Anders */
 .wrapper {
   max-width: 1080px;
   margin: 0 auto;
 }
 
 header {
-  margin: 0 auto;
   padding: 0.5rem 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   text-transform: uppercase;
   background-color: var(--clr-neutral-100);
 }
 
 header .wrapper {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -286,8 +281,8 @@ ul {
 }
 
 h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
+  font-size: var(--fs-800);
+  font-weight: var(--fw-bold);
 }
 
 .character-limit {
@@ -326,13 +321,7 @@ h1 {
   /* auto = needed space, 1fr = fill remaining space */
   grid-template-rows: auto auto 1fr auto;
 
-  /* named areas for layout if we want */
-    grid-template-areas:
-        "header"
-        "description"
-        "footer";
-
-  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.15); /* offset x, offset y, blur, spread radius */
   background-color: var(--clr-neutral-100);
 }
 
