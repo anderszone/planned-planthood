@@ -140,6 +140,60 @@ main {
   width: 1px;
 }
 
+.padding-top-btm-medium {
+  padding: 3rem 0;
+}
+
+.bg-color-light {
+  background-color: var(--clr-neutral-100);
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-color-accent-circle {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: var(--clr-accent);
+  
+  svg {
+    width: 130px;
+    height: 130px;
+  } 
+
+  svg path {
+    stroke: var(--clr-neutral-100);
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.gap-small {
+  gap: 0.5rem;
+}
+
+.gap-medium {
+  gap: 1rem;
+}
+
+.gap-large {
+  gap: 6rem;
+}
+
 /* Composition */
 .flow > * + * {
   margin-block-start: var(--flow-space, 1em);
@@ -204,7 +258,8 @@ header .wrapper {
 .logo {
   display: flex;
   align-items: center;
-  gap:1rem;
+  gap: 1rem;
+  text-transform: uppercase;
   line-height: 1;
 }
 
@@ -231,8 +286,9 @@ h1 {
   font-weight: bold;
 }
 
-.margin-btm {
-  margin-bottom: 2rem;
+.character-limit {
+  width: 20ch; /* ungefär 20 tecken per rad */
+  word-wrap: break-word; /* säkerställer radbrytning */
 }
 
 .cards {
@@ -275,4 +331,23 @@ h1 {
 
   border: 1px solid #ccc;
   background-color: #eef;
+}
+
+.site-footer {
+  padding: 3rem 0;
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-accent);
+}
+
+.site-footer .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.site-footer svg path {
+  stroke: var(--clr-neutral-100);
+}
+
+.site-footer a {
+  color: var(--clr-neutral-100);
 }
