@@ -154,6 +154,10 @@ main {
   justify-content: center;
 }
 
+.center-text {
+  text-align: center;
+}
+
 .bg-color-accent-circle {
   width: 250px;
   height: 250px;
@@ -291,19 +295,18 @@ h1 {
   word-wrap: break-word; /* säkerställer radbrytning */
 }
 
+.hero-img {
+  padding: 1rem;
+  box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.15); /* offset x, offset y, blur, spread radius */
+  background-color: var(--clr-neutral-100);
+}
+
 .cards {
     display: grid;
     gap: 1em;
 
     /* fill empty space in the grid */
     grid-auto-flow: dense;
-
-    /* using grid areas for a static layout */
-    /* grid-template-areas:
-        "a b c"
-        "d e f"
-        "g h i"
-        "j k l"; */
 
     /* for more dynamic layouts use grid-template-columns  */
     /* mobile first one column */
@@ -312,7 +315,7 @@ h1 {
     /* using media queries to change the layout for more columns 70ch = 70 characters */
     @media (width > 70ch) {
         /* responsive grid using minmax and auto-fit */
-        grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(25ch, 1fr));
     }
 }
 
@@ -330,7 +333,7 @@ h1 {
         "footer";
 
   border: 1px solid #ccc;
-  background-color: #eef;
+  background-color: var(--clr-neutral-100);
 }
 
 .site-footer {
