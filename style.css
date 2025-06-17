@@ -317,12 +317,36 @@ h1 {
 .card {
   display: grid;
   gap: 1em;
+  padding: 1rem;
 
   /* auto = needed space, 1fr = fill remaining space */
-  grid-template-rows: auto auto 1fr auto;
+  grid-template-rows: auto auto auto 1fr auto;
 
   box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.15); /* offset x, offset y, blur, spread radius */
   background-color: var(--clr-neutral-100);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.tag {
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  color: var(--clr-neutral-100);
+  line-height: 1;
+  background-color: var(--clr-accent);
+  font-size: var(--fs-200);
+  font-weight: var(--fw-semi-bold);
+}
+
+.avatar {
+  border:2px solid #000;
+  border-radius: 50%;
+  background-color: var(--clr-neutral-200);
 }
 
 .site-footer {
