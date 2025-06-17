@@ -186,6 +186,14 @@ main {
   align-items: center;
 }
 
+.align-start {
+  align-self: flex-start;
+}
+
+.align-end {
+  align-self: flex-end;
+}
+
 .gap-small {
   gap: 0.5rem;
 }
@@ -223,11 +231,15 @@ a {
   text-decoration: none;
   color: var(--clr-accent);
 
-  &:hover,
-  &:focus-visible {
+  &:not(.nav-link, .logo):hover,
+  &:not(.nav-link, .logo):focus-visible {
     color: var(--clr-primary-light-1);
     text-decoration: underline;
   }
+}
+
+button {
+  cursor: pointer;
 }
 
 body {
@@ -259,6 +271,7 @@ header .wrapper {
   align-items: center;
   gap: 1rem;
   text-transform: uppercase;
+  font-weight: var(--fw-semi-bold);
   line-height: 1;
 }
 
@@ -273,7 +286,16 @@ svg path {
 
 .nav-links {
   display: flex;
-  gap: 5rem;
+}
+
+.nav-link {
+  padding: 1.15rem 2.5rem;
+  font-weight: var(--fw-semi-bold);
+}
+
+.nav-link:hover {
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-accent);
 }
 
 ul {
@@ -294,6 +316,23 @@ h1 {
   padding: 1rem;
   box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.15); /* offset x, offset y, blur, spread radius */
   background-color: var(--clr-neutral-100);
+}
+
+.input-field {
+  position: relative;
+
+  input {
+    border-radius: 2rem;
+    padding: 0.5rem 6rem 0.5rem 3.5rem;
+    border: 1px solid var(--clr-neutral-300);
+  }
+
+  button {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    text-transform: uppercase;
+  }
 }
 
 .cards {
@@ -347,6 +386,20 @@ h1 {
   border:2px solid #000;
   border-radius: 50%;
   background-color: var(--clr-neutral-200);
+}
+
+.btn-accent {
+  padding: 0.465rem 0.8rem;
+  border-radius: 2rem;
+  color: var(--clr-neutral-100);
+  line-height: 1; 
+  background-color: var(--clr-accent);
+  border: 1px solid var(--clr-accent);
+
+  &:hover {
+    color: var(--clr-accent);
+    background-color: var(--clr-neutral-100);
+  }
 }
 
 .site-footer {

@@ -14,10 +14,10 @@
         </a>
         <nav>
           <ul class="nav-links">
-            <li><a href="#">Hem</a></li>
-            <li><a href="#">Historik</a></li>
-            <li><a href="#">Tips</a></li>
-            <li><a href="#">Kontakt</a></li>
+            <li><a class="nav-link" href="#">Hem</a></li>
+            <li><a class="nav-link" href="#">Historik</a></li>
+            <li><a class="nav-link" href="#">Tips</a></li>
+            <li><a class="nav-link" href="#">Kontakt</a></li>
           </ul>
         </nav>
       </div>
@@ -33,10 +33,12 @@
       <section class="bg-color-light center gap-large padding-top-btm-medium">
         <div class="flex column gap-medium">
           <h2 class="character-limit">Anmäl dig till vårt nyhetsbrev så du inte missar en utsådd!</h2>
-          <form action="">
+          <form class="align-start" action="">
             <label for="" class="visually-hidden">Epost</label>
-            <input type="email" name="" id="" placeholder="email@domain.com">
-            <button>SKICKA</button>
+            <div class="input-field">
+              <input type="email" name="" id="" placeholder="email@domain.com">
+              <button class="btn-accent">Skicka</button>
+            </div>
           </form>
         </div>
         <div class="bg-color-accent-circle center">
@@ -383,7 +385,7 @@
         <div class="flex column gap-medium">
           <h2>Våra tidigare odlingar</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ratione quia eos pariatur deserunt veritatis. Tenetur, ipsum! Iusto delectus ipsam esse pariatur rerum eveniet nostrum, dolor distinctio nam quaerat doloribus?</p>
-          <button>Planterade plantor</button>
+          <button class="btn-accent align-end">Planterade plantor</button>
         </div>
       </section>
     </main>
@@ -397,8 +399,8 @@
             Planned<br>Planthood
           </a>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, veniam ducimus aut sint atque ullam alias perspiciatis fuga. Consequuntur nesciunt ea corrupti aperiam fugit inventore ratione earum. Iure, eius molestias?</p>
-          <p class="flex align-center gap-small"><img src="Assets\images\icon-phone.svg" alt="">Telefon: 020-1234567</p>
-          <p class="flex align-center gap-small"><img src="Assets\images\icon-email.svg" alt="">info@plannedplant.com</p>
+          <a href="tel:0201234567" class="flex align-center gap-small"><img src="Assets\images\icon-phone.svg" alt="">Telefon: 020-1234567</a>
+          <a href="mailto:info@plannedplant.com" class="flex align-center gap-small"><img src="Assets\images\icon-email.svg" alt="">info@plannedplant.com</a>
         </div>
         <nav>
           <ul class="flex column gap-medium">
