@@ -451,11 +451,18 @@ h1 {
   color: var(--clr-neutral-100);
 }
 
-/* Responsivitet för datorskärmar */
-@media (min-width: 1200px) {
+/* Responsivitet för surfplattor */
+@media (min-width: 768px) {
   .wrapper {
-    max-width: 1080px;
+    max-width: 660px;
     padding-inline: 0;
+  }
+}
+
+/* Responsivitet för datorskärmar */
+@media (min-width: 992px) {
+  .wrapper {
+    max-width: 900px;
   }
 
   header {
@@ -483,5 +490,11 @@ h1 {
 
   .site-footer-nav {
     display: flex;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wrapper {
+    max-width: 1080px;
   }
 }
