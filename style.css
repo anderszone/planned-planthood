@@ -51,17 +51,9 @@ figcaption {
   max-width: 55ch;
 }
 
-/* for container queries, landmarks as containers */
-body > :is(header, footer),
-main {
-  container-type: inline-size;
-}
-
-/* remove list style but keep it as list for Safari browser - use with <ul role="list"> */
-[role="list"] {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* remove list style */
+ul {
+  list-style-type: none;
 }
 
 /* Theme */
@@ -140,24 +132,34 @@ main {
   width: 1px;
 }
 
+/* 1.5rem padding on top and bottom */
+.padding-top-btm-small { 
+  padding: 1.5rem 0;
+}
+
+/* 3rem padding on top and bottom */
 .padding-top-btm-medium {
   padding: 3rem 0;
 }
 
+/* Background color white */
 .bg-color-light {
   background-color: var(--clr-neutral-100);
 }
 
+/* Center content */
 .center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* Center text */
 .center-text {
   text-align: center;
 }
 
+/* This creates a circle with a background color and an SVG inside it */
 .bg-color-accent-circle {
   width: 250px;
   height: 250px;
@@ -174,40 +176,52 @@ main {
   }
 }
 
+/* Put elements side by side */
 .flex {
   display: flex;
 }
 
+/* Put elements on top of each other */
 .column {
   flex-direction: column;
 }
 
+/* Put elements as far away from each other as possible */
+.space-between {
+  justify-content: space-between;
+}
+
+/* Center content in a flex container */
 .align-center {
   align-items: center;
 }
 
+/* Align content to the end of a flex container */
 .align-end {
   align-self: flex-end;
 }
 
+/* Small gap between items in a flex container */
 .gap-small {
   gap: 0.5rem;
 }
 
+/* Medium gap between items in a flex container */
 .gap-medium {
   gap: 1rem;
 }
 
+/* Large gap between items in a flex container */
 .gap-large {
   gap: 6rem;
 }
 
-/* Composition */
-.flow > * + * {
-  margin-block-start: var(--flow-space, 1em);
+/* Global/base */
+h1 {
+  font-size: var(--fs-800);
+  font-weight: var(--fw-bold);
 }
 
-/* Global/base */
 h2,
 h3 {
   font-weight: var(--fw-bold);
@@ -234,7 +248,7 @@ a {
   }
 }
 
-button, .hamburger-container {
+button {
   cursor: pointer;
 }
 
@@ -244,12 +258,13 @@ body {
   color: var(--clr-primary-dark);
 }
 
-/* Anders */
+/* An element that wraps around the content */
 .wrapper {
   margin: 0 auto;
   padding-inline: 1rem;
 }
 
+/* Site header */
 header {
   position: sticky;
   top: 0;
@@ -258,12 +273,7 @@ header {
   background-color: var(--clr-neutral-100);
 }
 
-header .wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
+/* Planned Planthood logotype */
 .logo {
   display: flex;
   align-items: center;
@@ -282,10 +292,12 @@ svg path {
   stroke: var(--clr-accent);
 }
 
+/* Hides navigation links in mobile view */
 .nav-links {
   display: none;
 }
 
+/* Navigation link */
 .nav-link {
   padding: 1.15rem 2.5rem;
   font-weight: var(--fw-semi-bold);
@@ -296,8 +308,11 @@ svg path {
   }
 }
 
+/* Hamburger menu for mobile view */
 .hamburger-container {
   padding: 1rem;
+  border: 0;
+  background-color: var(--clr-neutral-100);
   
   &:hover {
     background-color: var(--clr-accent);
@@ -308,34 +323,30 @@ svg path {
   }
 }
 
-ul {
-  list-style-type: none;
-}
-
-h1 {
-  font-size: var(--fs-800);
-  font-weight: var(--fw-bold);
-}
-
+/* Set a limit for the number of chars wide */
 .character-limit {
-  width: 20ch; /* ungefär 20 tecken per rad */
-  word-wrap: break-word; /* säkerställer radbrytning */
+  width: 20ch; /* around 20 chars per row */
+  word-wrap: break-word; /* Ensure line-break */
 }
 
+/* Hero image */
 .hero-img {
   padding: 1rem;
   box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.15); /* offset x, offset y, blur, spread radius */
   background-color: var(--clr-neutral-100);
 }
 
+/* Reverse order of items in mobile view so the green circle with an svg inside shows on top */
 .section-newsletter .wrapper {
   flex-direction: column-reverse !important;
 }
 
+/* Set the width to 100% of the email input field */
 .newsletter-form input {
   width: 100%;
 }
 
+/* Email input field */
 .input-field {
   position: relative;
 
@@ -345,6 +356,7 @@ h1 {
     border: 1px solid var(--clr-neutral-300);
   }
 
+  /* Positions button inside the input field */
   button {
     position: absolute;
     top: 3px;
@@ -353,6 +365,7 @@ h1 {
   }
 }
 
+/* Creates a grid for the cards */
 .cards {
     display: grid;
     gap: 1em;
@@ -371,6 +384,7 @@ h1 {
     }
 }
 
+/* Each card */
 .card {
   display: grid;
   gap: 1em;
@@ -383,12 +397,14 @@ h1 {
   background-color: var(--clr-neutral-100);
 }
 
+/* Category tags */
 .tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.3rem;
 }
 
+/* Each tag */
 .tag {
   padding: 0.4rem 1rem;
   border-radius: 2rem;
@@ -400,12 +416,14 @@ h1 {
   font-weight: var(--fw-semi-bold);
 }
 
+/* Avatar image */
 .avatar {
   border:2px solid #000;
   border-radius: 50%;
   background-color: var(--clr-neutral-200);
 }
 
+/* Send and planted plants buttons */
 .btn-accent {
   padding: 0.465rem 0.8rem;
   border-radius: 2rem;
@@ -420,6 +438,7 @@ h1 {
   }
 }
 
+/* Wrapper for both newsletter and previous plantations sections */
 .section-info .wrapper {
   display: flex;
   flex-direction: column;
@@ -428,30 +447,29 @@ h1 {
   text-align: center;
 }
 
+/* Site footer */
 .site-footer {
   padding: 3rem 0;
   color: var(--clr-neutral-100);
   background-color: var(--clr-accent);
 }
 
-.site-footer .wrapper {
-  display: flex;
-  justify-content: space-between;
-}
-
+/* Site footer logotype */
 .site-footer svg path {
   stroke: var(--clr-neutral-100);
 }
 
+/* Hides site footer navigation in mobile view */
 .site-footer-nav {
   display: none;
 }
 
+/* Site footer navigation links */
 .site-footer a {
   color: var(--clr-neutral-100);
 }
 
-/* Responsivitet för surfplattor */
+/* Responsiveness for tablets */
 @media (min-width: 768px) {
   .wrapper {
     max-width: 660px;
@@ -459,7 +477,7 @@ h1 {
   }
 }
 
-/* Responsivitet för datorskärmar */
+/* Responsiveness for laptops and small desktop screens */
 @media (min-width: 992px) {
   .wrapper {
     max-width: 900px;
@@ -493,6 +511,7 @@ h1 {
   }
 }
 
+/* Responsiveness for desktop */
 @media (min-width: 1200px) {
   .wrapper {
     max-width: 1080px;
