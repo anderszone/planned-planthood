@@ -186,10 +186,6 @@ main {
   align-items: center;
 }
 
-.align-start {
-  align-self: flex-start;
-}
-
 .align-end {
   align-self: flex-end;
 }
@@ -238,7 +234,7 @@ a {
   }
 }
 
-button {
+button, .hamburger-container {
   cursor: pointer;
 }
 
@@ -250,12 +246,14 @@ body {
 
 /* Anders */
 .wrapper {
-  max-width: 1080px;
   margin: 0 auto;
+  padding-inline: 1rem;
 }
 
 header {
-  padding: 0.5rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 99;
   text-transform: uppercase;
   background-color: var(--clr-neutral-100);
 }
@@ -285,17 +283,29 @@ svg path {
 }
 
 .nav-links {
-  display: flex;
+  display: none;
 }
 
 .nav-link {
   padding: 1.15rem 2.5rem;
   font-weight: var(--fw-semi-bold);
+  
+  &:hover, &:focus-visible {
+    color: var(--clr-neutral-100);
+    background-color: var(--clr-accent);
+  }
 }
 
-.nav-link:hover {
-  color: var(--clr-neutral-100);
-  background-color: var(--clr-accent);
+.hamburger-container {
+  padding: 1rem;
+  
+  &:hover {
+    background-color: var(--clr-accent);
+  
+    path {
+      stroke: var(--clr-neutral-100);
+    }
+  }
 }
 
 ul {
@@ -316,6 +326,14 @@ h1 {
   padding: 1rem;
   box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.15); /* offset x, offset y, blur, spread radius */
   background-color: var(--clr-neutral-100);
+}
+
+.section-newsletter .wrapper {
+  flex-direction: column-reverse !important;
+}
+
+.newsletter-form input {
+  width: 100%;
 }
 
 .input-field {
@@ -396,10 +414,18 @@ h1 {
   background-color: var(--clr-accent);
   border: 1px solid var(--clr-accent);
 
-  &:hover {
+  &:hover, &:focus-visible {
     color: var(--clr-accent);
     background-color: var(--clr-neutral-100);
   }
+}
+
+.section-info .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  text-align: center;
 }
 
 .site-footer {
@@ -417,6 +443,45 @@ h1 {
   stroke: var(--clr-neutral-100);
 }
 
+.site-footer-nav {
+  display: none;
+}
+
 .site-footer a {
   color: var(--clr-neutral-100);
+}
+
+/* Responsivitet för datorskärmar */
+@media (min-width: 1200px) {
+  .wrapper {
+    max-width: 1080px;
+    padding-inline: 0;
+  }
+
+  header {
+    padding: 0.5rem 0;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+
+  .hamburger-container {
+    display: none;
+  }
+
+  .section-newsletter .wrapper {
+    flex-direction: row !important;
+  }
+
+  .section-info .wrapper {
+    flex-direction: row;
+    justify-content: center;
+    text-align: left;
+    gap: 6rem;
+  }
+
+  .site-footer-nav {
+    display: flex;
+  }
 }
