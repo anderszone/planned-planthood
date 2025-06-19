@@ -309,7 +309,7 @@ svg path {
 }
 
 /* Hamburger menu for mobile view */
-.hamburger-container {
+.btn-hamburger {
   padding: 1rem;
   border: 0;
   background-color: var(--clr-neutral-100);
@@ -491,7 +491,7 @@ svg path {
     display: flex;
   }
 
-  .hamburger-container {
+  .btn-hamburger {
     display: none;
   }
 
